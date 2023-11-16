@@ -172,7 +172,7 @@ fn main() {
     let mut ref_filename = PathBuf::new();
     let mut output_prefix;
     let mut k : usize = 5;
-    let mut l : usize = 31;
+    let mut l : usize = 8;
     let mut c = 4;
     let mut s = 11;
     let mut g = 2000;
@@ -180,7 +180,7 @@ fn main() {
     let mut q = 200;
     let low_memory = opt.low_memory;
     let a = false;
-    let mut density : FH = 0.01;
+    let mut density : FH = 0.02;
     let reference : bool = false;
     let mut use_hpc : bool = true; 
     let mut use_simd : bool = true; 
