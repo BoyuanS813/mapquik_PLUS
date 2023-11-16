@@ -25,6 +25,6 @@ cargo +nightly build --release
 
 ## Performance
 
-`mapquik_PLUS` can correctly map most simulated reads from human genome (over $90$\% of reads at $Q60$ with divergence no more than 10\%) while maintain the ultra fast mapping speed of `mapquik`.
+`mapquik_PLUS` can correctly map most simulated reads from human genome (over $90$\% of reads at $Q60$ with divergence no more than $10$\%) while maintain the ultra fast mapping speed of `mapquik`.
 
 For real ONT reads from T2T-CHM13 Project, `mapquik_PLUS` achieves high consistency with `minimap2` mapping results and obtains an over $30\times$ speed-up over `mm2-fast`. 
