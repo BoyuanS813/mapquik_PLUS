@@ -3,7 +3,7 @@ name = "mapquik"
 version = "0.1.0"
 authors = ["ekimb, rayan"]
 edition = "2021"
-default-run = "mapquik"
+default-run = "mapquikPLUS"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
