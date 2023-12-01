@@ -10,6 +10,7 @@ conda activate mapquikPLUS
 mamba install -c bioconda samtools
 mamba install seqtk
 mamba install -c bioconda sra-tools
+mamba install -c bioconda seqkit
 # Simulators
 mamba install -c bioconda pbsim
 mamba install -c bioconda nanosim
@@ -18,12 +19,10 @@ mamba install -c bioconda minimap2
 mamba install -c bioconda meryl
 mamba install -c bioconda winnowmap
 mamba install -c blend-bio
-mamba install -c "bioconda/label/cf201901" mashmap
+mamba install -c bioconda mashmap
 git clone --recursive https://github.com/bwa-mem2/mm2-fast.git mm2-fast
 ./mm2-fast/make 
-mv ./mm2-fast/minimap2 ./mm2-fast/mm2-fast
-export PATH=$PATH:
-
+mv ./mm2-fast/minimap2 ./mm2-fast
 
 # Download reference human genome of T2T-CHM13v2.0
 wget https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/analysis_set/chm13v2.0.fa.gz
