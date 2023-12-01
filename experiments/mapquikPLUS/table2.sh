@@ -13,14 +13,14 @@ done
 for ERROR in 0.97 0.95 0.93 0.91
 do 
     READS=simulated-chm13.10X.$ERROR.25kb
-    mashmap -r $REF -q $READS.fa -o mashmap-$ERROR -t 8
-    minimap2 -x map-ont $REF $READS.fa -t 8
-    mapquikPLUS -r --reference $REF $READ.fa -p mapquik-$-t 8
-    awk '$12 == 60' mapquik-$ERROR.paf | awk '{print $1}' > Q60.list
+    mashmap -r $REF -q $READS.fa -o mashmap-$ERROR.paf -t 8
+    minimap2 -x map-ont $REF $READS.fa -t 8 > minimap2-$ERROR.paf
+    ./mapquikPLUS --reference $REF $READ.fa -p mapquikPLUS-$ERROR -t 8
+    awk '$12 == 60' mapquikPLUS-$ERROR.paf | awk '{print $1}' > Q60.list
     cat $READS.fa | awk 'NR%2==1' | sed 's/>//' > reads.list
     grep -f Q60.list reads.list -v > retrived.list
     seqtk subseq $READ.fa retrived.list > $PAF.retrived.fastq
     rm Q60.list
     rm reads.list
-    minimap2 -x map-ont $REF $PAF.retrived.fastq
+    minimap2 -x map-ont $REF $PAF.retrived.fastq -t 8 > minimap2-retrived-$ERROR.paf
 done
