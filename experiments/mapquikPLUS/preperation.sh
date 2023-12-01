@@ -1,4 +1,3 @@
-#!/bin/bash
 
 # Download necessary tools
 # Construct a new conda environment
@@ -23,6 +22,7 @@ mamba install -c bioconda mashmap
 git clone --recursive https://github.com/bwa-mem2/mm2-fast.git mm2-fast
 ./mm2-fast/make 
 mv ./mm2-fast/minimap2 ./mm2-fast
+mv ../../target/release/mapquikPLUS .
 
 # Download reference human genome of T2T-CHM13v2.0
 wget https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/analysis_set/chm13v2.0.fa.gz
