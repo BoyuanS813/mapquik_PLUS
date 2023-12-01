@@ -1,3 +1,5 @@
+# File to retrive Q60 and unmmapped reads from PAF
+
 PAF=$1
 READS=$2
 
