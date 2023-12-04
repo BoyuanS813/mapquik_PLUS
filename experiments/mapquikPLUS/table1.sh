@@ -2,7 +2,7 @@
 
 # Simulated CLR
 
-REF1=chm13-one.fa
+REF1=chm13-oneline.fa
 REF=chm13.fa
 
 for ERROR in 0.95 0.90
