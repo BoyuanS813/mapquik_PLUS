@@ -20,8 +20,8 @@ do
     awk '$12 == 60' mapquikPLUS-$ERROR.paf | awk '{print $1}' > Q60.list
     cat $READS.fa | awk 'NR%2==1' | sed 's/>//' > reads.list
     grep -f Q60.list reads.list -v > retrived.list
-    seqtk subseq $READ.fa retrived.list > $PAF.retrived.fastq
+    seqtk subseq $READ.fa retrived.list > mapquikPLUS-$ERROR.retrived.fa
     rm Q60.list
     rm reads.list
-    minimap2 -x map-ont $REF $PAF.retrived.fastq -t 8 > minimap2-retrived-$ERROR.paf
+    minimap2 -x map-ont $REF mapquikPLUS-$ERROR.retrived.fa -t 8 > minimap2-retrived-$ERROR.paf
 done
